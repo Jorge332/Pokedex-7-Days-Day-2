@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --main-color: #ef5350;
+  --font-color: #ffffff;
+  --font-size-big: 36px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.nav-bar {
+  font-size: var(--font-size-big);
+  height: 60px;
+  background-color: var(--main-color);
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav-bar > a {
+  color: var(--font-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+.nav-bar > a > img {
+  margin-right: 1rem;
+}
+
+.grid {
+  position: relative;
+  margin: 1rem;
+
+  margin-bottom: 2.5rem;
+  display: grid;
+  gap: 1rem;
+
+  /* Set number of columns */
+  grid-template-columns: repeat(12, 1fr);
+  /* Set min with for columns */
+  grid-template-columns: repeat(12, minmax(200px, 1fr));
+  /* makes it responsive */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.card {
+  width: 100%;
+  height: 200px;
+  background-color: aqua;
+}
+
+.my-footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  text-align: center;
+}
