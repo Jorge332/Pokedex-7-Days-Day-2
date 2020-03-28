@@ -1,3 +1,18 @@
-<div class="grid">
-    <div *ngFor="let i of arr" class="card"></div>
+<div class="container my-4 mx-auto">
+
+  <div class="row mx-auto" >
+    <app-info-card *ngFor="let i of arr; index as id"
+      [pokemon]="i"
+      [pokeId]="id"
+    ></app-info-card>
+  </div>
+
+  <footer class="text-center">
+    <div class="inner">
+      <p style="font-size: 26px;">
+        Copyright © 2020 by Jorge E. Ramirez Porras, All
+        rights Reserved.
+      </p>
+    </div>
+  </footer>
 </div>

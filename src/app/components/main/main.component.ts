@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { RestApiService } from "src/app/services/rest-api.service";
 
 @Component({
   selector: "app-main",
@@ -8,11 +9,11 @@ import { Component, OnInit } from "@angular/core";
 export class MainComponent implements OnInit {
   arr = [];
 
-  constructor() {
-    for (let index = 0; index < 50; index++) {
-      this.arr.push(index);
-    }
-  }
+  constructor(private restApi: RestApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.restApi.getPokemons().subscribe(val => {
+      this.arr = val.results;
+    });
+  }
 }
